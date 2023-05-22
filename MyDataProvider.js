@@ -1,7 +1,7 @@
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 
-const apiUrl = 'https://my.api.com/';
+const apiUrl = 'https://glicocheck.onrender.com/api';
 const httpClient = fetchUtils.fetchJson;
 
 export default {
