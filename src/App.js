@@ -1,4 +1,5 @@
-import { Admin, Resource, Login } from "react-admin";
+import { Admin, Resource } from "react-admin";
+// import { Admin, Resource, Login } from "react-admin";
 import jsonServerProvider from "ra-data-json-server";
 import { BloodTypeList } from "./components/BloodTypeList";
 import { DiabetesTypeList } from "./components/DiabetesTypeList";
@@ -12,13 +13,14 @@ import { BloodTypeEdit } from "./components/BloodTypeEdit";
 import { DiabetesTypeEdit } from "./components/DiabetesTypeEdit";
 import { MarkerMealEdit } from "./components/MarkerMealEdit";
 import { GenderEdit } from "./components/GenderEdit";
-import authProvider from "./authProvider";
+// import authProvider from "./authProvider";
 
 // const dataProvider = jsonServerProvider("https://glicocheck.onrender.com/api");
 const dataProvider = jsonServerProvider("http://localhost:5000");
+// authProvider={authProvider} loginPage={Login} 
 
 const App = () => (
-    <Admin authProvider={authProvider} loginPage={Login} dataProvider={dataProvider}>
+    <Admin dataProvider={dataProvider}>
         <Resource name="BloodType" list={BloodTypeList} create={BloodTypeCreate} edit={BloodTypeEdit}/>
         <Resource name="DiabetesType" list={DiabetesTypeList} create={DiabetesTypeCreate} edit={DiabetesTypeEdit}/>
         <Resource name="MarkerMeals" list={MarkerMealList} create={MarkerMealCreate} edit={MarkerMealEdit}/>

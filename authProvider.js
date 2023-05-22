@@ -49,8 +49,7 @@ const authProvider = {
     getPermissions: () => {
         // Required for the authentication to work
         return Promise.resolve();
-    },
-    // ...
+    }
 };
 
 export default authProvider;
