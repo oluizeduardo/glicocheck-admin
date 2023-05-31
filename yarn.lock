@@ -1796,10 +1796,10 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.7.tgz"
   integrity sha512-Cr4OjIkipTtcXKjAsm8agyleBuDHvxzeBoa1v543lbv1YaIwQjESsVcmjiWiPEbC1FIeHOG/Op9kdCmAmiS3Kw==
 
-"@remix-run/router@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.6.1.tgz"
-  integrity sha512-YUkWj+xs0oOzBe74OgErsuR3wVn+efrFhXBWrit50kOiED+pvQe2r6MWY0iJMQU/mSVKxvNzL4ZaYvjdX+G7ZA==
+"@remix-run/router@1.6.2":
+  version "1.6.2"
+  resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.6.2.tgz"
+  integrity sha512-LzqpSrMK/3JBAVBI9u3NWtOhWNw5AMQfrUFYB0+bDHTSw17z++WJLsPsxAuK+oSddsxk4d7F/JcdDPM1M5YAhA==
 
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
@@ -2931,6 +2931,15 @@ axe-core@^4.6.2:
   version "4.7.0"
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.7.0.tgz"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
+
+axios@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.4.0.tgz"
+  integrity sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
 
 axobject-query@^3.1.1:
   version "3.1.1"
@@ -4948,7 +4957,7 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.7.tgz"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-follow-redirects@^1.0.0:
+follow-redirects@^1.0.0, follow-redirects@^1.15.0:
   version "1.15.2"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
@@ -4983,6 +4992,15 @@ form-data@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/form-data/-/form-data-3.0.1.tgz"
   integrity sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    mime-types "^2.1.12"
+
+form-data@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz"
+  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
@@ -8088,6 +8106,11 @@ proxy-addr@~2.0.7:
     forwarded "0.2.0"
     ipaddr.js "1.9.1"
 
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
+
 psl@^1.1.33:
   version "1.9.0"
   resolved "https://registry.npmjs.org/psl/-/psl-1.9.0.tgz"
@@ -8130,10 +8153,10 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
-ra-core@^4.0.0, ra-core@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.npmjs.org/ra-core/-/ra-core-4.10.2.tgz"
-  integrity sha512-uWcNMHQXi5F6dk4nLaI/OTpjRLW95UW1pp0600Lx+9HeAZ+jyrTnWY2jS5qxevdKH6nkJt9RZ4qN3//pCjPseA==
+ra-core@^4.0.0, ra-core@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.npmjs.org/ra-core/-/ra-core-4.11.0.tgz"
+  integrity sha512-KK2C04Vqqy5zHii+/+jBGPDGh3gZALwN6+zCgLeVwLjxZYWTGywXBEgpVi3/+MT/T9B/6r1EALzvfzZoid3ROQ==
   dependencies:
     clsx "^1.1.1"
     date-fns "^2.19.0"
@@ -8146,33 +8169,25 @@ ra-core@^4.0.0, ra-core@^4.10.2:
     react-is "^17.0.2"
     react-query "^3.32.1"
 
-ra-data-json-server@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.npmjs.org/ra-data-json-server/-/ra-data-json-server-4.10.2.tgz"
-  integrity sha512-dPNPh2LjjpWgMDU5ufEf3P9qmSrHzFM4w+FQVG7xC9t8IyM8KCXqTNcvuCStHUMNeJNSv8SSdW+jNqd/hNheTw==
-  dependencies:
-    query-string "^7.1.1"
-    ra-core "^4.10.2"
-
-ra-i18n-polyglot@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.npmjs.org/ra-i18n-polyglot/-/ra-i18n-polyglot-4.10.2.tgz"
-  integrity sha512-W20PQiwJwDAMvyuWoNILz+pipCXSXv5fnzOQ3PvZ/TTcy9+/vlh1TnZb21nPnrogsgCWkIXOGzLspy0MMPPcvw==
+ra-i18n-polyglot@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.npmjs.org/ra-i18n-polyglot/-/ra-i18n-polyglot-4.11.0.tgz"
+  integrity sha512-J9LgEviJyA4RWi+alSR/0elzNfDhj6MKC8fYnLd6aXG2i8XHu7nXNtWdQv26FlovEQ4GXsGbKInyFwIfP0SwNw==
   dependencies:
     node-polyglot "^2.2.2"
-    ra-core "^4.10.2"
+    ra-core "^4.11.0"
 
-ra-language-english@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.npmjs.org/ra-language-english/-/ra-language-english-4.10.2.tgz"
-  integrity sha512-T9oMLQyZs+LzONAGJAF/aZc39zqcz2g25+RGb3uk4K5Rru+nuegttDVGff8NIRnw8F8gt8TBPHcnBjyECNw+lg==
+ra-language-english@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.npmjs.org/ra-language-english/-/ra-language-english-4.11.0.tgz"
+  integrity sha512-79VYZAaSFhfwL+YkgfhVP1hm60pnG+WuZdxypIX4S7tDPTxZGMcBuSEO4Q5Bf4m5jGRu4Jbwu5JrKhZN6eHbkA==
   dependencies:
-    ra-core "^4.10.2"
+    ra-core "^4.11.0"
 
-ra-ui-materialui@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.npmjs.org/ra-ui-materialui/-/ra-ui-materialui-4.10.2.tgz"
-  integrity sha512-024r1o+mYR11ntBXN6C8uDzp1gVqc76vfc0yLkJHJMjXogc87KFRJRDqOQzaUuokbeo5geaF2lPxjsr91skoWw==
+ra-ui-materialui@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.npmjs.org/ra-ui-materialui/-/ra-ui-materialui-4.11.0.tgz"
+  integrity sha512-KLpfLRlXNt5Mst4a9XzU1IolYJofUK3IuTI09wn839CVpsgm6iJTRtwcpcWPS1BcPfQJa5VragKJFAz/qLe/Og==
   dependencies:
     autosuggest-highlight "^3.1.1"
     clsx "^1.1.1"
@@ -8217,21 +8232,21 @@ raw-body@2.5.1:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-admin@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.npmjs.org/react-admin/-/react-admin-4.10.2.tgz"
-  integrity sha512-nji5n9xwQb8PYCKhPsM9XSdztvtFJc2GPDogYOKDCMA4uvvp/IcoX9Aiq/xDmtFTKBOl0e93EU3DDK+AZaR41g==
+react-admin@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.npmjs.org/react-admin/-/react-admin-4.11.0.tgz"
+  integrity sha512-iYmFX5klpiyKvP0r33vXX0XR5K1lFtwZ2XivBVIvCnjA01haBWPxkS61VH2oAeYKTVYBVk+0oqvwKzOp03ANSA==
   dependencies:
     "@emotion/react" "^11.4.1"
     "@emotion/styled" "^11.3.0"
     "@mui/icons-material" "^5.0.1"
     "@mui/material" "^5.0.2"
     history "^5.1.0"
-    ra-core "^4.10.2"
-    ra-i18n-polyglot "^4.10.2"
-    ra-language-english "^4.10.2"
-    ra-ui-materialui "^4.10.2"
-    react-hook-form "^7.40.0"
+    ra-core "^4.11.0"
+    ra-i18n-polyglot "^4.11.0"
+    ra-language-english "^4.11.0"
+    ra-ui-materialui "^4.11.0"
+    react-hook-form "^7.43.9"
     react-router "^6.1.0"
     react-router-dom "^6.1.0"
 
@@ -8306,7 +8321,7 @@ react-error-overlay@^6.0.11:
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
   integrity sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==
 
-react-hook-form@*, react-hook-form@^7.40.0:
+react-hook-form@*, react-hook-form@^7.43.9:
   version "7.43.9"
   resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.43.9.tgz"
   integrity sha512-AUDN3Pz2NSeoxQ7Hs6OhQhDr6gtF9YRuutGDwPQqhSUAHJSgGl2VeY3qN19MG0SucpjgDiuMJ4iC5T5uB+eaNQ==
@@ -8350,20 +8365,20 @@ react-refresh@^0.11.0, "react-refresh@>=0.10.0 <1.0.0":
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
-react-router-dom@^6.1.0:
-  version "6.11.1"
-  resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.11.1.tgz"
-  integrity sha512-dPC2MhoPeTQ1YUOt5uIK376SMNWbwUxYRWk2ZmTT4fZfwlOvabF8uduRKKJIyfkCZvMgiF0GSCQckmkGGijIrg==
+react-router-dom@^6.1.0, react-router-dom@^6.11.2:
+  version "6.11.2"
+  resolved "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.11.2.tgz"
+  integrity sha512-JNbKtAeh1VSJQnH6RvBDNhxNwemRj7KxCzc5jb7zvDSKRnPWIFj9pO+eXqjM69gQJ0r46hSz1x4l9y0651DKWw==
   dependencies:
-    "@remix-run/router" "1.6.1"
-    react-router "6.11.1"
+    "@remix-run/router" "1.6.2"
+    react-router "6.11.2"
 
-react-router@^6.1.0, react-router@6.11.1:
-  version "6.11.1"
-  resolved "https://registry.npmjs.org/react-router/-/react-router-6.11.1.tgz"
-  integrity sha512-OZINSdjJ2WgvAi7hgNLazrEV8SGn6xrKA+MkJe9wVDMZ3zQ6fdJocUjpCUCI0cNrelWjcvon0S/QK/j0NzL3KA==
+react-router@^6.1.0, react-router@6.11.2:
+  version "6.11.2"
+  resolved "https://registry.npmjs.org/react-router/-/react-router-6.11.2.tgz"
+  integrity sha512-74z9xUSaSX07t3LM+pS6Un0T55ibUE/79CzfZpy5wsPDZaea1F8QkrsiyRnA2YQ7LwE/umaydzXZV80iDCPkMg==
   dependencies:
-    "@remix-run/router" "1.6.1"
+    "@remix-run/router" "1.6.2"
 
 react-scripts@5.0.1:
   version "5.0.1"
