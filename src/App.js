@@ -1,31 +1,25 @@
-import { Admin, Resource } from "react-admin";
-// import { Admin, Resource, Login } from "react-admin";
-import jsonServerProvider from "ra-data-json-server";
-import { BloodTypeList } from "./components/BloodTypeList";
-import { DiabetesTypeList } from "./components/DiabetesTypeList";
-import { MarkerMealList } from "./components/MarkerMealList";
-import { GenderList } from "./components/GenderList";
-import { BloodTypeCreate } from "./components/BloodTypeCreate";
-import { DiabetesTypeCreate } from "./components/DiabetesTypeCreate";
-import { GenderCreate } from "./components/GenderCreate";
-import { MarkerMealCreate } from "./components/MarkerMealCreate";
-import { BloodTypeEdit } from "./components/BloodTypeEdit";
-import { DiabetesTypeEdit } from "./components/DiabetesTypeEdit";
-import { MarkerMealEdit } from "./components/MarkerMealEdit";
-import { GenderEdit } from "./components/GenderEdit";
-// import authProvider from "./authProvider";
-
-// const dataProvider = jsonServerProvider("https://glicocheck.onrender.com/api");
-const dataProvider = jsonServerProvider("http://localhost:5000");
-// authProvider={authProvider} loginPage={Login} 
+import React from 'react';
+import { Admin, Resource } from 'react-admin';
+import { BrowserRouter } from 'react-router-dom';
+import dataProvider from './apiClient';
+import { Dashboard } from "./components/Dashboard/Dashboard";
+import BloodTypeList from './components/BloodType/BloodTypeList';
+import BloodTypeCreate from './components/BloodType/BloodTypeCreate';
+import BloodTypeEdit from './components/BloodType/BloodTypeEdit';
+import BloodTypeDelete from './components/BloodType/BloodTypeDelete';
 
 const App = () => (
-    <Admin dataProvider={dataProvider}>
-        <Resource name="BloodType" list={BloodTypeList} create={BloodTypeCreate} edit={BloodTypeEdit}/>
-        <Resource name="DiabetesType" list={DiabetesTypeList} create={DiabetesTypeCreate} edit={DiabetesTypeEdit}/>
-        <Resource name="MarkerMeals" list={MarkerMealList} create={MarkerMealCreate} edit={MarkerMealEdit}/>
-        <Resource name="Gender" list={GenderList} create={GenderCreate} edit={GenderEdit}/>
+  <BrowserRouter>
+    <Admin dataProvider={dataProvider} dashboard={Dashboard}>
+      <Resource
+        name="bloodtype"
+        list={BloodTypeList}
+        create={BloodTypeCreate}
+        edit={BloodTypeEdit}
+        delete={BloodTypeDelete}
+      />
     </Admin>
+  </BrowserRouter>
 );
 
 export default App;
