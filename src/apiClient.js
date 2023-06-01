@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = 'https://glicocheck.onrender.com/api';
+const apiUrl = process.env.API_URL;
 const loginUrl = `${apiUrl}/security/login`;
 
 const apiClient = axios.create({
