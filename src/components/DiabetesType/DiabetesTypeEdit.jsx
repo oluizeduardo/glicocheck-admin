@@ -1,9 +1,10 @@
-import { Edit, SimpleForm, TextInput, required } from 'react-admin';
-export const DiabetesTypeEdit = () => (
-    <Edit>
-        <SimpleForm>
-            <TextInput disabled label="Id" source="id" />
-            <TextInput source="Diabetes Type" validate={required()} />
-        </SimpleForm>
-    </Edit>
+import { Edit, SimpleForm, TextInput } from 'react-admin';
+const DiabetesTypeEdit = (props) => (
+    <Edit {...props}>
+    <SimpleForm>
+      <TextInput source="description" />
+    </SimpleForm>
+  </Edit>
 );
+
+export default DiabetesTypeEdit;

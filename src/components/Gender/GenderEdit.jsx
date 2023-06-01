@@ -1,9 +1,10 @@
-import { Edit, SimpleForm, TextInput, required } from 'react-admin';
-export const GenderEdit = () => (
-    <Edit>
-        <SimpleForm>
-            <TextInput disabled label="Id" source="id" />
-            <TextInput source="Gender" validate={required()} />
-        </SimpleForm>
-    </Edit>
+import { Edit, SimpleForm, TextInput } from 'react-admin';
+const GenderEdit = (props) => (
+    <Edit {...props}>
+    <SimpleForm>
+      <TextInput source="description" />
+    </SimpleForm>
+  </Edit>
 );
+
+export default GenderEdit;
