@@ -14,8 +14,8 @@ const apiClient = axios.create({
 const login = async () => {
   try {
     const response = await apiClient.post(loginUrl, {
-      email: 'costaeduardoluiz@gmail.com',
-      password: 'asd',
+      email: process.env.ADMIN_EMAIL,
+      password: process.env.ADMIN_PASSWORD,
     });
 
     const { accessToken } = response.data;
