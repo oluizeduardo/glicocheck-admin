@@ -1,9 +1,11 @@
-import { Edit, SimpleForm, TextInput, required } from 'react-admin';
-export const MarkerMealEdit = () => (
-    <Edit>
+import { Edit, SimpleForm, TextInput } from 'react-admin';
+
+const MarkerMealEdit = (props) => (
+    <Edit {...props}>
         <SimpleForm>
-            <TextInput disabled label="Id" source="id" />
-            <TextInput source="Marker Meal" validate={required()} />
+            <TextInput source="description" />
         </SimpleForm>
     </Edit>
 );
+
+export default MarkerMealEdit;
