@@ -1,6 +1,7 @@
 import axios from 'axios';
+import env from "react-dotenv";
 
-const apiUrl = process.env.API_URL;
+const apiUrl = env.API_URL;
 const loginUrl = `${apiUrl}/security/login`;
 
 const apiClient = axios.create({
@@ -14,8 +15,8 @@ const apiClient = axios.create({
 const login = async () => {
   try {
     const response = await apiClient.post(loginUrl, {
-      email: process.env.ADMIN_EMAIL,
-      password: process.env.ADMIN_PASSWORD,
+      email: env.ADMIN_EMAIL,
+      password: env.ADMIN_PASSWORD,
     });
 
     const { accessToken } = response.data;
