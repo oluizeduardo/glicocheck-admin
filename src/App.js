@@ -6,7 +6,6 @@ import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import Man4Icon from '@mui/icons-material/Man4';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import { Dashboard } from "./components/Dashboard/Dashboard";
 import BloodTypeList from './components/BloodType/BloodTypeList';
 import BloodTypeCreate from './components/BloodType/BloodTypeCreate';
 import BloodTypeEdit from './components/BloodType/BloodTypeEdit';
@@ -23,10 +22,16 @@ import MarkerMealList from './components/MarkerMeal/MarkerMealList';
 import MarkerMealEdit from './components/MarkerMeal/MarkerMealEdit';
 import MarkerMealCreate from './components/MarkerMeal/MarkerMealCreate';
 import MarkerMealDelete from './components/MarkerMeal/MarkerMealDelete';
+import authProvider from './authProvider';
+import LogoutButton from './components/Logout/LogoutButton';
+
 
 const App = () => (
   <BrowserRouter>
-    <Admin dataProvider={dataProvider} dashboard={Dashboard}>
+    <Admin 
+      dataProvider={dataProvider}
+      authProvider={authProvider}
+      logoutButton={LogoutButton}>
       <Resource
         name="bloodtype"
         list={BloodTypeList}
@@ -49,7 +54,7 @@ const App = () => (
         create={GenderCreate}
         edit={GenderEdit}
         delete={GenderDelete}
-        icon={Man4Icon }
+        icon={Man4Icon}
       />
       <Resource
         name="markermeal"
