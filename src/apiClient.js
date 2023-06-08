@@ -1,8 +1,6 @@
 import axios from 'axios';
-import env from "react-dotenv";
 
-const apiUrl = env.API_URL;
-const loginUrl = `${apiUrl}/security/login`;
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const apiClient = axios.create({
   baseURL: apiUrl,
@@ -11,32 +9,29 @@ const apiClient = axios.create({
   },
 });
 
-// Função para fazer login e obter o token de acesso
-const login = async () => {
-  try {
-    const response = await apiClient.post(loginUrl, {
-      email: env.ADMIN_EMAIL,
-      password: env.ADMIN_PASSWORD,
-    });
-
-    const { accessToken } = response.data;
-    return accessToken;
-  } catch (error) {
-    throw new Error('Falha ao fazer login');
-  }
+/**
+ * @return The access token in the session storage. 
+ */
+const getAccessToken = () => {
+  return sessionStorage.getItem('accessToken');
 };
 
-// Função para adicionar o token de acesso aos cabeçalhos da requisição
+/**
+ * Adds bearer token to the Authentication header.
+ * @param {string} accessToken 
+ */
 const addAuthHeader = (accessToken) => {
   apiClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 };
 
-// Data Provider personalizado para o React Admin
+/**
+ * Personalized data provider.
+ */
 const dataProvider = {
   
   create: async (resource, params) => {
     try {
-      const accessToken = await login();
+      const accessToken = getAccessToken();
       addAuthHeader(accessToken);
 
       const response = await apiClient.post(`/${resource}`, params.data);
@@ -50,7 +45,7 @@ const dataProvider = {
 
   update: async (resource, params) => {
     try {
-      const accessToken = await login();
+      const accessToken = getAccessToken();
       addAuthHeader(accessToken);
 
       const response = await apiClient.put(`/${resource}/${params.id}`, params.data);
@@ -64,7 +59,7 @@ const dataProvider = {
 
   delete: async (resource, params) => {
     try {
-      const accessToken = await login();
+      const accessToken = getAccessToken();
       addAuthHeader(accessToken);
 
       const response = await apiClient.delete(`/${resource}/${params.id}`);
@@ -78,7 +73,7 @@ const dataProvider = {
 
   deleteMany: async (resource, params) => {
     try {
-      const accessToken = await login();
+      const accessToken = getAccessToken();
       addAuthHeader(accessToken);
 
       const { ids } = params;
@@ -95,7 +90,7 @@ const dataProvider = {
 
   getList: async (resource, params) => {
     try {
-      const accessToken = await login();
+      const accessToken = getAccessToken();
       addAuthHeader(accessToken);
 
       const response = await apiClient.get(`/${resource}`);
@@ -110,7 +105,7 @@ const dataProvider = {
 
   getOne: async (resource, params) => {
     try {
-      const accessToken = await login();
+      const accessToken = getAccessToken();
       addAuthHeader(accessToken);
 
       const response = await apiClient.get(`/${resource}/${params.id}`);

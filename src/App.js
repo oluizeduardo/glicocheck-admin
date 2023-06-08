@@ -22,17 +22,16 @@ import MarkerMealList from './components/MarkerMeal/MarkerMealList';
 import MarkerMealEdit from './components/MarkerMeal/MarkerMealEdit';
 import MarkerMealCreate from './components/MarkerMeal/MarkerMealCreate';
 import MarkerMealDelete from './components/MarkerMeal/MarkerMealDelete';
-// import myTheme from './components/Layout/MyTheme';
-// import MyLayout from './components/Layout/MyLayout';
 import authProvider from './authProvider';
-// theme={myTheme} darkTheme={darkTheme} layout={MyLayout}
-
-// const darkTheme = { ...myTheme, palette: { mode: 'dark' } };
+import LogoutButton from './components/Logout/LogoutButton';
 
 
 const App = () => (
   <BrowserRouter>
-    <Admin dataProvider={dataProvider} authProvider={authProvider}>
+    <Admin 
+      dataProvider={dataProvider}
+      authProvider={authProvider}
+      logoutButton={LogoutButton}>
       <Resource
         name="bloodtype"
         list={BloodTypeList}

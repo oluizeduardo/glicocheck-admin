@@ -1,85 +1,52 @@
 import axios from 'axios';
 
-const apiUrl = 'https://glicocheck.onrender.com/api';
-const loginUrl = `${apiUrl}/security/login`;
-
 const apiClient = axios.create({
-    baseURL: apiUrl,
-    body: {
-        'email': email,
-        'password': password 
-    },
-    headers: {
-        'Content-Type': 'application/json',
-    },
+  baseURL: process.env.REACT_APP_API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
+/**
+ * Personalized auth provider.
+ */
 const authProvider = {
+    login: async (credentials) => {
+      const { username, password } = credentials;
 
-    login: async () => {
+      try {
+        // Send request to /login.
+        const response = await apiClient.post('/security/login', {
+          email: username,
+          password: password,
+        });
+  
+        // Save the access token.
+        const { accessToken } = response.data;
+        sessionStorage.setItem('accessToken', accessToken);
 
-        try {
-            const response = await apiClient.post(loginUrl, {
-                email: body.email,
-                password: body.password
-            });
+        // Returns void to indicate successful login.
+        return Promise.resolve();
 
-            const { accessToken } = response.data;
-            return accessToken;
-        } catch (error) {
-            throw new Error('Falha ao fazer login');
-        }
+      } catch (error) {
+        return Promise.reject(new Error('Error during login'));
+      }
     },
-    // login: ({ email, password }) => {
-    //     const request = new Request('https://glicocheck.onrender.com/api/security/login', {
-    //         method: 'POST',
-    //         body: JSON.stringify({ email, password }),
-    //         headers: new Headers({ 'Content-Type': 'application/json' }),
-    //     });
-    //     return fetch(request)
-    //         .then(response => {
-    //             if (response.status < 200 || response.status >= 300) {
-    //                 throw new Error(response.statusText);
-    //             }
-    //             return response.json();
-    //         })
-    //         .then(auth => {
-    //             localStorage.setItem('auth', JSON.stringify(auth));
-    //         })
-    //         .catch(() => {
-    //             throw new Error('Network error')
-    //         });
-    // },
-    checkError: (error) => {
-        const status = error.status;
-        if (status === 401 || status === 403) {
-            localStorage.removeItem('auth');
-            return Promise.reject();
-        }
-        // other error code (404, 500, etc): no need to log out
+  
+    logout: async () => {
+        // Clean sessionStorage
+        sessionStorage.removeItem('accessToken');
+        // Returns void to indicate successful logout.
         return Promise.resolve();
     },
-    checkAuth: () => {
-        const addAuthHeader = (accessToken) => {
-            apiClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-        };
-    },
-    logout: () => {
-        localStorage.removeItem('auth');
-        return Promise.resolve();
-    },
-    getIdentity: () => {
-        try {
-            const { user_id, name } = JSON.parse(localStorage.getItem('auth'));
-            return Promise.resolve({ user_id, name });
-        } catch (error) {
-            return Promise.reject(error);
-        }
-    },
-    getPermissions: () => {
-        // Required for the authentication to work
-        return Promise.resolve();
-    },
-    // ...
-};
-export default authProvider;
+
+    checkAuth: async () => {
+        // Check if there is an access token in the sessionStorage.
+        const accessToken = sessionStorage.getItem('accessToken');
+        const isAuthenticated = !!accessToken;
+        return isAuthenticated ? Promise.resolve() : Promise.reject();
+      },
+  };
+  
+  export default authProvider;
+  
