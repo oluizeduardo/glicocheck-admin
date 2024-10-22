@@ -14,10 +14,10 @@ import DiabetesTypeList from './components/DiabetesType/DiabetesTypeList';
 import DiabetesTypeEdit from './components/DiabetesType/DiabetesTypeEdit';
 import DiabetesTypeCreate from './components/DiabetesType/DiabetesTypeCreate';
 import DiabetesTypeDelete from './components/DiabetesType/DiabetesTypeDelete';
-import GenderList from './components/Gender/GenderList';
-import GenderEdit from './components/Gender/GenderEdit';
-import GenderCreate from './components/Gender/GenderCreate';
-import GenderDelete from './components/Gender/GenderDelete';
+import GendersList from './components/Genders/GendersList';
+import GendersEdit from './components/Genders/GendersEdit';
+import GendersCreate from './components/Genders/GendersCreate';
+import GendersDelete from './components/Genders/GendersDelete';
 import MarkerMealList from './components/MarkerMeal/MarkerMealList';
 import MarkerMealEdit from './components/MarkerMeal/MarkerMealEdit';
 import MarkerMealCreate from './components/MarkerMeal/MarkerMealCreate';
@@ -49,11 +49,11 @@ const App = () => (
         icon={MenuBookIcon}
       />
       <Resource
-        name="gender"
-        list={GenderList}
-        create={GenderCreate}
-        edit={GenderEdit}
-        delete={GenderDelete}
+        name="genders"
+        list={GendersList}
+        create={GendersCreate}
+        edit={GendersEdit}
+        delete={GendersDelete}
         icon={Man4Icon}
       />
       <Resource

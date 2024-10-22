@@ -8,7 +8,7 @@ const GenderCreate = (props) => {
             .create('gender', { data: values })
             .then(() => {
                 // Redirecionar para a página de listagem após a criação bem-sucedida
-                props.history.push('/gender');
+                props.history.push('/genders');
             })
             .catch((error) => {
                 // Lidar com erros de criação, se necessário

@@ -8,10 +8,10 @@ const GenderDelete = ({ record }) => {
 
   const handleDelete = async () => {
     try {
-      await dataProvider.deleteOne('gender', { id: record.id });
+      await dataProvider.deleteOne('genders', { id: record.id });
       notify('Registro excluído com sucesso', 'success');
       refresh();
-      redirect('/gender');
+      redirect('/genders');
     } catch (error) {
       notify('Erro ao excluir o registro', 'error');
     }

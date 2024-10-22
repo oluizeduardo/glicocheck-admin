@@ -99,7 +99,7 @@ const dataProvider = {
         total: response.data.length,
       };
     } catch (error) {
-      throw new Error('Falha ao obter a lista de recursos');
+      throw new Error(`Falha ao obter a lista de recursos ${resource}`);
     }
   },
 

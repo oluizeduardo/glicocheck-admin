@@ -5,8 +5,8 @@ const GenderList = (props) => (
       <Datagrid>
         <TextField source="id" />
         <TextField source="description" label="Description" />
-        <EditButton basePath="/gender" />
-        <DeleteButton basePath="/gender" />
+        <EditButton basePath="/genders" />
+        <DeleteButton basePath="/genders" />
       </Datagrid>
     </List>
 );
