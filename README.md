@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./docs/glicocheck-logo.png">  
+</div>
+
 # Glicocheck Admin
 Administrative interface for [Glicocheck](https://github.com/oluizeduardo/glicocheck).
 
