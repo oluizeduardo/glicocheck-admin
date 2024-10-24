@@ -9,17 +9,10 @@ const apiClient = axios.create({
   },
 });
 
-/**
- * @return The access token in the session storage. 
- */
 const getAccessToken = () => {
   return sessionStorage.getItem('accessToken');
 };
 
-/**
- * Adds bearer token to the Authentication header.
- * @param {string} accessToken 
- */
 const addAuthHeader = (accessToken) => {
   apiClient.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 };

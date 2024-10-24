@@ -1,5 +1,5 @@
 import { Button, useNotify, useRefresh, useRedirect } from 'react-admin';
-import dataProvider from '../../apiClient';
+import dataProvider from '../../dataProvider';
 
 const GenderDelete = ({ record }) => {
   const notify = useNotify();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import { BrowserRouter } from 'react-router-dom';
-import dataProvider from './apiClient';
+import dataProvider from './dataProvider';
 import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import Man4Icon from '@mui/icons-material/Man4';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, useNotify, useRefresh, useRedirect } from 'react-admin';
-import dataProvider from '../../apiClient';
+import dataProvider from '../../dataProvider';
 
 const BloodTypeDelete = ({ record }) => {
   const notify = useNotify();
